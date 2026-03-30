@@ -68,6 +68,7 @@ rails canvas:compile_assets
 
 rm -rf \
     .claude \
+    .config \
     .devcontainer \
     .github \
     .storybook \
