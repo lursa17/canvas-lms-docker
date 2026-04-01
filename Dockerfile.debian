@@ -16,6 +16,7 @@ ARG CANVAS_HOME
 
 ENV RAILS_ENV=production
 ENV COMPILE_ASSETS_BRAND_CONFIGS=0
+ENV SASS_STYLE=compressed
 
 COPY --link --from=node /usr/local/bin /usr/local/bin
 COPY --link --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
