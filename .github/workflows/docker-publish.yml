@@ -29,6 +29,15 @@ jobs:
             runner: ubuntu-latest
           - platform: linux/arm64
             runner: ubuntu-24.04-arm
+        exclude:
+          # code_ownership 2.1.1 (pinned by canvas-lms) publishes no
+          # aarch64-linux-musl gem, and this image does not build its Rust
+          # extension from source, so ARM64 Alpine is unsupported.
+          # 2.1.3+ publishes aarch64-linux-musl, so once canvas-lms bumps
+          # Gemfile.lock to code_ownership >= 2.1.3 this exclude can be removed.
+          # Use the Debian image for ARM64 until then.
+          - os: alpine
+            platform: linux/arm64
 
     steps:
       - name: Prepare
