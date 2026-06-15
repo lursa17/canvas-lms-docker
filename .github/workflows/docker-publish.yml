@@ -28,7 +28,7 @@ jobs:
           - platform: linux/amd64
             runner: ubuntu-latest
           - platform: linux/arm64
-            runner: ubuntu-24.04-arm
+            runner: ubuntu-26.04-arm
         exclude:
           # code_ownership 2.1.1 (pinned by canvas-lms) publishes no
           # aarch64-linux-musl gem, and this image does not build its Rust
