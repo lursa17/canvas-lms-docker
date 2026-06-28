@@ -28,13 +28,13 @@ apt-get install -y --no-install-recommends \
     libxmlsec1-dev
 EOF
 
-ADD --link https://api.github.com/repos/instructure/canvas-lms/git/refs/heads/${GIT_BRANCH} /dev/null
-ADD --link https://api.github.com/repos/instructure/QTIMigrationTool/git/refs/heads/ /dev/null
+ADD --link https://api.github.com/repos/lursa17/canvas-lms/git/refs/heads/${GIT_BRANCH} /dev/null
+ADD --link https://api.github.com/repos/lursa17/QTIMigrationTool/git/refs/heads/ /dev/null
 
 RUN <<EOF
-git clone -b ${GIT_BRANCH} --depth 1 https://github.com/instructure/canvas-lms.git ${CANVAS_HOME}
+git clone -b ${GIT_BRANCH} --depth 1 https://github.com/lursa17/canvas-lms.git ${CANVAS_HOME}
 # https://github.com/instructure/QTIMigrationTool/wiki
-git clone --depth 1 https://github.com/instructure/QTIMigrationTool.git ${CANVAS_HOME}/vendor/QTIMigrationTool
+git clone --depth 1 https://github.com/lursa17/QTIMigrationTool.git ${CANVAS_HOME}/vendor/QTIMigrationTool
 EOF
 
 WORKDIR ${CANVAS_HOME}
